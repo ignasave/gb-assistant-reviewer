@@ -1,5 +1,5 @@
 import { OpenAI } from 'openai';
-import { NestedComponent } from './analyze';
+import type { NestedComponent } from './analyze.ts';
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,

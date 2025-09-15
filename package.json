@@ -9,7 +9,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "assistant": "cd .github/assistant && npx ts-node --esm main.ts"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
@@ -42,6 +43,9 @@
     "react-native-worklets": "0.5.1"
   },
   "devDependencies": {
+    "@babel/parser": "^7.28.4",
+    "@babel/traverse": "^7.28.4",
+    "@babel/types": "^7.28.4",
     "@types/node": "^24.4.0",
     "@types/react": "~19.1.0",
     "eslint": "^9.25.0",

@@ -1,6 +1,6 @@
-import { analyzeFile } from "./analyze";
-import { getChangedFiles, postCommentToPR } from "./github";
-import { reviewWithLLM } from "./reviewer";
+import { analyzeFile } from "./analyze.ts";
+import { getChangedFiles, postCommentToPR } from "./github.ts";
+import { reviewWithLLM } from "./reviewer.ts";
 
 async function runReviewAssistant() {
   const files = getChangedFiles();
