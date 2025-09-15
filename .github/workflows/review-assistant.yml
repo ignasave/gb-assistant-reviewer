@@ -1,0 +1,21 @@
+name: Review Assistant
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs: 
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: npx ts-node .github/assistant/main.ts
+        env: 
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
