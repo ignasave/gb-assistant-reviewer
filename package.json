@@ -10,7 +10,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "assistant": "cd .github/assistant && npx ts-node --esm main.ts"
+    "assistant": "cd .github/assistant && node --import ./loader.mjs main.ts",
+    "assistant:build": "cd .github/assistant && npx tsc --noEmit false --outDir dist",
+    "assistant:run": "cd .github/assistant && node dist/main.js"
   },
   "dependencies": {
     "@actions/core": "^1.11.1",
